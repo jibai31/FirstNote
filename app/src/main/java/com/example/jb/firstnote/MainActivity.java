@@ -1,11 +1,7 @@
 package com.example.jb.firstnote;
 
-import android.arch.persistence.db.SupportSQLiteDatabase;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +14,6 @@ import com.example.jb.firstnote.db.SongDatabase;
 import com.example.jb.firstnote.db.SongFactory;
 import com.example.jb.firstnote.models.Song;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -69,21 +64,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ArrayAdapter<Song> songsAdapter = new ArrayAdapter<Song>(this, R.layout.support_simple_spinner_dropdown_item, songs);
         songsList.setAdapter(songsAdapter);
     }
-
-    /** Called when the user adds a song
-    public void addSong(View view) {
-        Intent intent = new Intent(this, ShowSongActivity.class);
-        EditText editText = (EditText) findViewById(R.id.newSongText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    } */
-
-    /** Called when the user plays a note
-    public void playNote(View view) {
-        Intent intent = new Intent(this, PlaySoundActivity.class);
-        startActivity(intent);
-    }*/
-
 
 }

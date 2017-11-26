@@ -22,7 +22,6 @@ public class PlaySoundActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_show_song);
 
         // Get frequency
         Intent intent = getIntent();
