@@ -5,16 +5,29 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:3.0.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
+ext {
+    //buildToolsVersion = "25.0.2"
+    //supportLibVersion = "25.3.1"
+    //supportLibVersion = "26.1.0"
+    supportLibVersion = "26.1.0"
+    runnerVersion = "1.0.1"
+    rulesVersion = "1.0.1"
+    espressoVersion = "3.0.1"
+    archLifecycleVersion = "1.0.0"
+    archRoomVersion = "1.0.0"
+}
+
 allprojects {
     repositories {
         jcenter()
+        maven { url 'https://maven.google.com' }
     }
 }
 

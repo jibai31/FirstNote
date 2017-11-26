@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DisplayMessageActivity"
+            android:name=".ShowSongActivity"
             android:parentActivityName=".MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
@@ -25,7 +25,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".PlaySoundActivity"></activity>
+        <activity android:name=".PlaySoundActivity" android:theme="@android:style/Theme.NoDisplay">
+        </activity>
     </application>
 
 </manifest>

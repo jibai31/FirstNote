@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FirstNote</string>
+    <string name="app_name">The right note</string>
     <string name="add_song_hint">Enter a song title</string>
     <string name="add_song_btn">OK</string>
     <string name="play_btn">Play</string>
