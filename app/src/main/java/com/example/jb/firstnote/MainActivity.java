@@ -3,6 +3,7 @@ package com.example.jb.firstnote;
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -51,9 +52,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         return songs;
     }
 
-    private void fillSongDatabase(List<Song> songs) {
-        SongDatabase db = SongDatabase.getSongDatabase(this);
-        db.songDao().insertAll(songs);
+    private void fillSongDatabase(final List<Song> songs) {
+        final Context currentContext = this;
+        // Use a new tread as this can take a while
+        final Thread thread = new Thread(new Runnable() {
+            public void run() {
+                SongDatabase db = SongDatabase.getSongDatabase(currentContext);
+                db.songDao().insertAll(songs);
+            }
+        });
+        thread.start();
     }
 
     private void fillList(ListView songsList, List<Song> songs) {

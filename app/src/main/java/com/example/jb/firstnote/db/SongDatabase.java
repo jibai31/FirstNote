@@ -6,12 +6,13 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
 import com.example.jb.firstnote.models.Song;
+import com.example.jb.firstnote.models.Voice;
 
 /**
  * Created by jb on 26/11/2017.
  */
 
-@Database(entities = {Song.class}, version = 1)
+@Database(entities = {Song.class, Voice.class}, version = 1)
 public abstract class SongDatabase extends RoomDatabase {
 
     private static SongDatabase INSTANCE;
@@ -24,7 +25,6 @@ public abstract class SongDatabase extends RoomDatabase {
     public static SongDatabase getSongDatabase(Context context) {
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(), SongDatabase.class, "song-database")
-                    .allowMainThreadQueries()
                     .build();
         }
         return INSTANCE;
